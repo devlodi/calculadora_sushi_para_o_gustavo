@@ -1,21 +1,29 @@
 function calculateSushi() {
     var numPeople = document.getElementById('num-people').value;
-    var arrozPerPerson = 386; // gramas de arroz por pessoa
-    var algasPerPerson = 5;   // folhas de alga por pessoa
-    var pecasPorPessoa = 30;  // peças de sushi por pessoa
+
+    // Obter os valores das referências atualizadas
+    var arrozPerPerson = parseInt(document.getElementById('ref-arroz').textContent.replace('g', '')); // gramas de arroz por pessoa
+    var algasPerPerson = parseInt(document.getElementById('ref-alga').textContent); // folhas de alga por pessoa
+    var pecasPorPessoa = parseInt(document.getElementById('ref-pecas').textContent); // peças de sushi por pessoa
 
     var totalArroz = numPeople * arrozPerPerson;
     var totalAlga = numPeople * algasPerPerson;
     var totalPecas = numPeople * pecasPorPessoa;
 
-    // Cálculos para ingredientes adicionais
-    var totalSalmão = document.getElementById('salmão').checked ? numPeople * 100 : 0; // 100g por pessoa
-    var totalPepino = document.getElementById('pepino').checked ? numPeople * 0.5 : 0; // 1/2 pepino por pessoa
-    var totalCenoura = document.getElementById('cenoura').checked ? numPeople * 0.5 : 0; // 1/2 cenoura por pessoa
-    var totalCreamCheese = document.getElementById('cream-cheese').checked ? numPeople * 50 : 0; // 50g por pessoa
-    var totalTofu = document.getElementById('tofu').checked ? numPeople * 100 : 0; // 100g por pessoa
+    // Cálculos para ingredientes adicionais com referências atualizadas
+    var salmaoPerPerson = parseInt(document.getElementById('ref-salmao').textContent.replace('g', ''));
+    var pepinoPerPerson = parseFloat(document.getElementById('ref-pepino').textContent);
+    var cenouraPerPerson = parseFloat(document.getElementById('ref-cenoura').textContent);
+    var creamCheesePerPerson = parseInt(document.getElementById('ref-cream-cheese').textContent.replace('g', ''));
+    var tofuPerPerson = parseInt(document.getElementById('ref-tofu').textContent.replace('g', ''));
 
-    // Exibindo os resultados
+    var totalSalmão = document.getElementById('salmão').checked ? numPeople * salmaoPerPerson : 0;
+    var totalPepino = document.getElementById('pepino').checked ? numPeople * pepinoPerPerson : 0;
+    var totalCenoura = document.getElementById('cenoura').checked ? numPeople * cenouraPerPerson : 0;
+    var totalCreamCheese = document.getElementById('cream-cheese').checked ? numPeople * creamCheesePerPerson : 0;
+    var totalTofu = document.getElementById('tofu').checked ? numPeople * tofuPerPerson : 0;
+
+    // Exibindo os resultados atualizados
     document.getElementById('total-arroz').textContent = 'Total de Arroz: ' + totalArroz + 'g';
     document.getElementById('total-alga').textContent = 'Total de Folhas de Alga: ' + totalAlga;
     document.getElementById('total-pecas').textContent = 'Total de Peças de Sushi: ' + totalPecas;
