@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Sushi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+    <div class="container">
+
+<button id="howToUseBtn">Como Usar</button>
+
+
+<div id="howToUseModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Como Usar a Calculadora de Sushi</h2>
+        <p>Bem-vindo à Calculadora de Sushi! Este guia rápido ajudará você a utilizar a calculadora de forma eficiente para planejar a quantidade ideal de ingredientes para o seu sushi. Siga os passos abaixo:</p>
+        <ol>
+            <li><strong>Informe o Número de Pessoas:</strong> No campo "Número de Pessoas", insira quantas pessoas irão comer o sushi. Isso ajudará a calcular a quantidade de ingredientes necessários.</li>
+            <li><strong>Selecione os Ingredientes:</strong> Marque as caixas ao lado de cada ingrediente que deseja incluir no seu sushi, como salmão, pepino, cenoura, cream cheese e tofu.</li>
+            <li><strong>Pressione "Calcular":</strong> Após selecionar os ingredientes, clique no botão "Calcular" para obter a quantidade total de cada ingrediente, baseada no número de pessoas.</li>
+            <li><strong>Veja os Resultados:</strong> As quantidades de arroz, algas e demais ingredientes selecionados serão exibidas na seção de resultados, juntamente com o número total de peças de sushi que podem ser feitas.</li>
+            <li><strong>Editar e Restaurar Referências:</strong> Se desejar ajustar as quantidades padrão de cada ingrediente por pessoa, clique em "Editar Referências". Para restaurar as quantidades originais, clique em "Restaurar Referências".</li>
+        </ol>
+        <p>Aproveite a sua sessão de preparação de sushi e divirta-se com essa experiência culinária!</p>
+    </div>
+</div>
+
+
+
+        <h1>Calculadora de Sushi para o gustaheisen</h1>
+        <div class="input-group">
+            <label for="num-people">Número de Pessoas:</label>
+            <input type="number" id="num-people" min="1" value="1">
+        </div>
+
+        <div class="checkbox-group">
+            <p>vai ?</p>
+            <div><input type="checkbox" id="salmão" name="salmão"><label for="salmão">Salmão</label></div>
+            <div><input type="checkbox" id="pepino" name="pepino"><label for="pepino">Pepino</label></div>
+            <div><input type="checkbox" id="cenoura" name="cenoura"><label for="cenoura">Cenoura</label></div>
+            <div><input type="checkbox" id="cream-cheese" name="cream-cheese"><label for="cream-cheese">Cream Cheese</label></div>
+            <div><input type="checkbox" id="tofu" name="tofu"><label for="tofu">Tofu</label></div>
+        </div>
+
+        <button onclick="calculateSushi()">Calcular</button>
+
+        <div class="results">
+            <p id="total-arroz">Total de Arroz: 0g</p>
+            <p id="total-alga">Total de Folhas de Alga: 0</p>
+            <p id="total-salmao">Total de Salmão: 0g</p>
+            <p id="total-pepino">Total de Pepino: 0 unidade(s)</p>
+            <p id="total-cenoura">Total de Cenoura: 0 unidade(s)</p>
+            <p id="total-cream-cheese">Total de Cream Cheese: 0g</p>
+            <p id="total-tofu">Total de Tofu: 0g</p>
+             
+        </div>
+
+ <div class="results-final">
+
+            <p>Vai render em média</p>   
+            <p id="total-pecas">Total de Peças de Sushi: 0</p>
+
+</div>
+
+
+        <div class="reference">
+    <p>Referências:</p>
+    <p>Arroz por Pessoa: <span id="ref-arroz">386g</span><input type="number" id="input-arroz" style="display: none;"></p>
+    <p>Folhas de Alga por Pessoa: <span id="ref-alga">5</span><input type="number" id="input-alga" style="display: none;"></p>
+    <p>Peças por Pessoa: <span id="ref-pecas">30</span><input type="number" id="input-pecas" style="display: none;"></p>
+    <p>Salmão por Pessoa: <span id="ref-salmao">100g</span><input type="number" id="input-salmao" style="display: none;"></p>
+    <p>Pepino por Pessoa: <span id="ref-pepino">0.5</span><input type="number" id="input-pepino" style="display: none;"></p>
+    <p>Cenoura por Pessoa: <span id="ref-cenoura">0.5</span><input type="number" id="input-cenoura" style="display: none;"></p>
+    <p>Cream Cheese por Pessoa: <span id="ref-cream-cheese">50g</span><input type="number" id="input-cream-cheese" style="display: none;"></p>
+    <p>Tofu por Pessoa: <span id="ref-tofu">100g</span><input type="number" id="input-tofu" style="display: none;"></p>
+    <button onclick="editReferences()">Editar Referências</button>
+    <button onclick="saveReferences()">Salvar mudanças</button>
+    <button onclick="restoreReferences()">Restaurar Referências</button>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

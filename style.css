@@ -1,0 +1,167 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://www.infoescola.com/wp-content/uploads/2007/10/algas-pardas-602972360.jpg');
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 75%;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-group, .checkbox-group {
+    text-align: left;
+}
+
+.input-group label, .input-group input, .checkbox-group label, .checkbox-group input {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.results-final {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #e6f7ff; /* Cor de fundo suave para a caixa */
+    border-left: 5px solid #1890ff; /* Borda lateral para destaque */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+
+.results {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #e6f7ff; /* Cor de fundo suave para a caixa */
+    border-left: 5px solid #1890ff; /* Borda lateral para destaque */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+.results p {
+    margin: 5px 0;
+    color: #333;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #b1d0e6; /* Cor de fundo padrão para linhas */
+}
+
+/* Estilo para linhas pares */
+.results p:nth-child(even) {
+    background-color: #e6f7ff; /* Cor um pouco mais escura para linhas pares */
+}
+
+
+.reference {
+    padding: 15px;
+    border: solid;
+    border-radius: 25px;
+    text-align: left;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+    .input-group label, .input-group input, .checkbox-group label, .checkbox-group input, button, .results, .reference {
+        font-size: 14px;
+    }
+}
+
+
+.reference button {
+    background-color: #008CBA;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.reference button:hover {
+    background-color: #005f73;
+}
+
+/* Estilo do botão */
+#howToUseBtn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Animação suave */
+}
+
+#howToUseBtn:hover {
+    background-color: #45a049;
+}
+
+/* Estilo do modal */
+.modal {
+    display: none; /* Inicialmente escondido */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
