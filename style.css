@@ -11,6 +11,8 @@ body {
     width: 75%;
     max-width: 400px;
     margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px; /* Margem superior de 50px */
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: white;
@@ -114,21 +116,30 @@ button:hover {
     background-color: #005f73;
 }
 
-/* Estilo do botão */
 #howToUseBtn {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #008CBA;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease; /* Animação suave */
+    animation: pulseAnimation 2s infinite; /* Define a animação */
 }
 
-#howToUseBtn:hover {
-    background-color: #45a049;
+/* Definindo os keyframes para a animação */
+@keyframes pulseAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
+
+
+#howToUseBtn:hover {
+    background-color: #005f73; /* Cor mais escura ao passar o mouse */
+    transform: scale(1.05); /* Aumentar levemente o tamanho */
+}
+
 
 /* Estilo do modal */
 .modal {
@@ -145,12 +156,38 @@ button:hover {
 }
 
 .modal-content {
+    text-align: left;
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    max-height: 80vh; /* Altura máxima do conteúdo do modal */
+    overflow-y: auto; /* Habilita o scrollbar vertical se necessário */
 }
+
+
+.modal-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do fundo da trilha */
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #76b852, #8DC26F); /* Degradê de verde */
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #5eac44, #76b852); /* Degradê mais escuro ao passar o mouse */
+}
+
+
+
+
 
 .close {
     color: #aaa;
